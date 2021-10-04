@@ -9,7 +9,7 @@
   outline: 0 !important;
 }
 body {
-  font-family: 'Lora', 'Times New Roman', serif;
+  font-family: 'PingFang SC', 'Times New Roman', serif;
   font-size: 18px;
   color: #404040;
   webkit-tap-highlight-color: #0085a1;
@@ -107,12 +107,12 @@ img::-moz-selection {
 .intro-header .site-heading .subheading {
   font-family: 'PingFang SC', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;
-  font-size: 24px;
+  font-size: 16px;
   line-height: 1.1;
   margin: 10px 0 0;
 }
 .intro-header .post-heading h1 {
-  font-size: 55px;
+  font-size: 20px;
 }
 .intro-header .post-heading h1 .subheading {
   line-height: 1.1;
@@ -120,7 +120,7 @@ img::-moz-selection {
 .intro-header .post-heading .subheading {
   font-family: 'PingFang SC', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 600;
-  font-size: 30px;
+  font-size: 24px;
   margin: 10px 0 30px;
 }
 footer {
@@ -201,13 +201,14 @@ footer .footer-menu li a:hover {
   color: #0085a1;
 }
 .page-index .post-preview > a > .post-title {
-  font-size: 36px;
+  font-size: 32px;
   margin-top: 30px;
   margin-bottom: 10px;
 }
 .page-index .post-preview > a > .post-subtitle {
   margin: 0;
   font-weight: 300;
+  font-size: 18px;
   margin-bottom: 10px;
 }
 .page-index .post-preview > .post-meta {
