@@ -19,7 +19,7 @@
 
 <!--Open Graph Title-->
 
-    <meta property="og:title" content="Leo&#34;s Blog"/>
+    <meta property="og:title" content="DeepLearning 学习笔记"/>
 
 
 <!--Open Graph Description-->
@@ -32,7 +32,7 @@
 
 <!--Type page-->
 
-    <meta property="og:type" content="website"/>
+    <meta property="og:type" content="article"/>
 
 
 <!--Page Cover-->
@@ -51,7 +51,7 @@
 
 <!-- Title -->
 
-<title>归档：2021 | Leo&#34;s Blog</title>
+<title>DeepLearning 学习笔记 | Leo&#34;s Blog</title>
 
 <!-- Bootstrap Core CSS -->
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
@@ -112,82 +112,194 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
-<header class="intro-header" style="background-image: url('/img/homePic.jpg')">
+<header class="intro-header" style="background-image: url('https://w.wallhaven.cc/full/nr/wallhaven-nr8wpj.jpg')">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
-                <div class="site-heading text-center text-white">
-                    <h1>2021</h1>
+            <div class="col-lg-12 col-md-12 text-center">
+                <div class="post-heading text-white">
+                    <h1>DeepLearning 学习笔记</h1>
+                    
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container page-archives">
-    <div class="row">
-        <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 text-center mb-5">
-            <div class="btn-group archives-filter-group" role="group" aria-label="archives filter">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Main Content -->
+            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                
+                    <span class="meta d-inline-block">
+    
+    
+        <span class="post-meta-split">&nbsp;|&nbsp;</span>
+        <i class="fas fa-user-edit"></i>
+        LEO
+    
+    <!-- Date -->
+    
+        <span class="post-meta-split">&nbsp;|&nbsp;</span>
+        <i class="far fa-calendar-check fa-fw"></i>
+        2021-10-04
+    
+    <!-- word count and read count -->
     
 
     
-        
-            <button type="button" class="btn btn-info" disabled>
-                2021
-            </button>
-        
-    
-</div>
 
-    <a class="btn btn-light archives-filter-all" href="/archives/" role="button">
-        All    
-        <span class="badge badge-secondary">2</span>
-    </a>
- 
-        </div>
-        <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
-            
-                <div class="post-preview post-preview-archive-archive">
-    <a href="/2021/10/04/%E7%AC%AC%E4%B8%80%E7%AB%A0/">
-        <h1 class="post-title">
-            DeepLearning 学习笔记
-        </h1>
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-            Posted by LEO on
-        
-        2021-10-04
-    </p>
-</div>
-            
-                <div class="post-preview post-preview-archive-archive">
-    <a href="/2021/10/04/hello-world/">
-        <h1 class="post-title">
-            Hello World
-        </h1>
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2021-10-04
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pagination d-block text-center">
-   
+    
+        <span class="post-meta-split">&nbsp;|&nbsp;</span>
+        <i class="far fa-eye fa-fw"></i>
+        <span id="busuanzi_value_page_pv"></span>
+    
+</span>  
+                
+                <h1 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h1><h4 id="1-Sigmoid-neurons"><a href="#1-Sigmoid-neurons" class="headerlink" title="1.  Sigmoid neurons"></a>1.  <a target="_blank" rel="noopener" href="http://neuralnetworksanddeeplearning.com/chap1.html#sigmoid_neurons">Sigmoid neurons</a></h4><p>该激活函数的特点是变化平缓，输入的微小改变不至于导致输出结果的巨大变化，这样才能让神经网络更好的学习，也能更好的适应于新的数据输入（从已有的外推新的时不会造成造成认知的巨大变化，已有的经验才能适用，有点像A学会一题解法，但是条件变一下就不会了，而B却能举一反三，这里就是希望算法具备B的特质），使算法具备更高的鲁棒性。</p>
+<p><img src="image/image.png"></p>
+<p><img src="image/image_1.png"></p>
+<p><img src="image/image_2.png"></p>
+<h4 id="2-cost-function"><a href="#2-cost-function" class="headerlink" title="2. cost function"></a>2. cost function</h4><p><img src="image/image_3.png"></p>
+<p>  上式中x是输入向量，y是对应于该输入的准确解向量，a是对应于x的神经网络计算值；本质上C是关于w, b的一个函数，我们需要找到一组w,b值，是的对于任意输入的x向量，C的值会很小，也就是预测值与真实值接近。而这是通过找到对于训练集（一个x的集合）所有x都能达到较好的估计效果的一组w,x来实现的。通过训练，让程序针对这一类问题掌握某种规律，从何应对从未接触过的新的同类问题。</p>
+<p>  解决上述问题的关键归结到找C函数的最小值，此处用到了梯度下降法</p>
+<h4 id="gradient-descent"><a href="#gradient-descent" class="headerlink" title="gradient descent"></a>gradient descent</h4><p><img src="image/image_4.png"></p>
+<p><img src="image/image_5.png"></p>
+<p><img src="image/image_6.png"></p>
+<p><img src="image/image_7.png"></p>
+<p><img src="image/image_8.png"></p>
+<p>大致总结为：</p>
+<ul>
+<li><p>计算C关于各个自变量的偏导；</p>
+</li>
+<li><p>取各变量的增量为一个系数（eta）乘上前面求得的偏导再去相反数，如此C的变化肯定是负数了，也就是下降了；这里η的选取是很重要的，因为这关系到第一个式子是否成了，也就是C能不能真的减小；</p>
+</li>
+<li><p>由此可以计算出一个新的V向量，也就朝“山坡”向下迈了一步，然后在这一个新的位置，继续上述过程，直到找到一个最低点。</p>
+</li>
 </ul>
+<h4 id="stochastic-gradient-descent"><a href="#stochastic-gradient-descent" class="headerlink" title="stochastic gradient descent"></a>stochastic gradient descent</h4><p><img src="image/image_9.png"></p>
+<p><img src="image/image_10.png"></p>
+<p>由于需要找到的时一组对于所有x输入都比较适用的w,b值，因此需要考虑对于每个x输入求得一个梯度下降系数之后取个均值，但是这样未免太慢了点，不如把输入集分成很多同样大小的小集合，对一个小集合算出一个上述的均值梯度系数，算完后可以得到一组新的w,b值，也就是新起点；再在此基础上对下一个小集合继续算均值梯度系数，这样迭代下去，慢慢更新w,b值，直至算完所有小集合。</p>
+
+            </div>
+
+            <!-- Post information -->
+            
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 post-tags">
+        
+            <i class="fas fa-tag" style="vertical-align: middle;font-size: .8rem;"></i>
+            tags:&nbsp;
+            
+            
+        
+            <a href="/tags/机器学习-深度学习-算法-人工智能/">#机器学习 深度学习 算法 人工智能</a>
+        
+    </div>
+
+            
+<div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+  <ul class="pagination d-block text-center">
+     
+    <li class="next page-item d-inline">
+      <a href="/2021/10/04/hello-world/" class="page-link float-right"
+        >下一篇 &rarr;</a
+      >
+    </li>
+    
+  </ul>
+</div>
+
+
+
+            
+                <!-- Comments -->
+                
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+  <div id="gitalk-container"></div>
+</div>
+
+<script>
+  let gitalk = new Gitalk({
+      clientID: 'f65d006bf759b125e65e',
+      clientSecret: '97c5a7bc54ecd9501d19d7685380877c09370d13',
+      repo: 'BigDevil82.github.io',
+      owner: 'BigDevil82',
+      admin: "BigDevil82",
+      id: '2021-10-04 12:04:43',
+      title: 'DeepLearning 学习笔记',
+      distractionFreeMode: true  // Facebook-like distraction free mode
+  });
+  gitalk.render('gitalk-container');
+</script>
+
+
+                
+
+            
 
         </div>
     </div>
-</div>
+</article> 
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+    <style>
+        #toc-content .toc-link::before {
+            background-color: transparent;
+            max-height: 25px;
+        }
+
+        #toc-content .toc-link.is-active-link::before {
+            background-color: #404040;
+        }
+    </style>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <div class="ui-toc dropup scrollspy-body pull-right" style="right: 3%;">
+        <button type="button" class="toc-btn btn btn-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+            <i class="fas fa-list"></i>
+        </button>
+        <div class="dropdown-menu dropdown-menu-right p-2"  aria-labelledby="tocLabel">
+            <div class="toc-widget">
+                <div id="toc-content" class="text-truncate">
+                </div>
+            </div>
+            <div class="toc-menu pt-3 pl-4">
+                <a class="expand-toggle d-block py-1" href="#"><span class="expand-text">全部展开</span><span class="close-text" style="display: none;">全部收起</span></a>
+                <a class="back-to-top d-block py-1" href="#">回到顶部</a>
+                <a class="go-to-bottom d-block py-1" href="#">移至底部</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        tocbot.init({
+            // Where to render the table of contents.
+            tocSelector: '#toc-content',
+            // Where to grab the headings to build the table of contents.
+            contentSelector: 'article',
+            // Which headings to grab inside of the contentSelector element.
+            headingSelector: 'h1, h2, h3',
+            // For headings inside relative or absolute positioned containers within content.
+            hasInnerContainers: true,
+        });
+    </script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script>
+        MathJax.Hub.Config({
+            tex2jax:{inlineMath:[['$', '$']]}
+        })
+    </script>
+
+    
 
 
     <!-- Footer -->
