@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<!--Description-->
+
+
+
+    <meta name="description" content="this is my first bolg, based on hexo, where i&#39;ll share some study notes"/>
+
+
+<!--Author-->
+
+    <meta name="author" content="Leo"/>
+
+
+<!--Open Graph Title-->
+
+    <meta property="og:title" content="hexo搭建博客详解"/>
+
+
+<!--Open Graph Description-->
+
+    <meta property="og:description" content="this is my first bolg, based on hexo, where i&#39;ll share some study notes"/>
+
+
+<!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Leo&#34;s Blog"/>
+
+<!--Type page-->
+
+    <meta property="og:type" content="article"/>
+
+
+<!--Page Cover-->
+
+
+    <meta property="og:image" content="https://bigdevil82.github.io/img/homePic.jpg"/>
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+
+
+
+
+    <meta name="twitter:image" content="https://bigdevil82.github.io/img/homePic.jpg"/>
+
+
+<!-- Title -->
+
+<title>hexo搭建博客详解 | Leo&#34;s Blog</title>
+
+<!-- Bootstrap Core CSS -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
+
+<!-- Custom CSS -->
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<!-- Custom Fonts -->
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.0/css/all.min.css" />
+<link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.0/css/all.min.css" />
+<link href="//fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<!-- Gallery -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/featherlight@1.4.0/src/featherlight.css" integrity="sha256-30DV/STftlyQ6v8yaOWlabammvCYtRJERLj/m0b3zno=" crossorigin="anonymous">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/lightgallery@1.6.11/dist/css/lightgallery.min.css">
+
+<!-- favicon -->
+
+<link rel="icon" href="/img/demon.png"/>
+
+
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+<!-- Head tag -->
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top bg-transparent position-absolute w-100 p-0" id="nav">
+    <div class="container pl-0 pr-0">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <a class="navbar-brand text-white p-1 pl-3" href="/">Home</a>
+        </div>
+        <div class="navbar-nav float-right">
+            <button class="btn btn-link search-btn navbar-item" data-toggle="modal" data-target="#searchModal">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/img/homePic.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 text-center">
+                <div class="post-heading text-white">
+                    <h1>hexo搭建博客详解</h1>
+                    
+                    <h2 class="post-subheading">
+                        细致全面的教程，在本人踩过无数坑之后总结的血泪教训，让你少走不少弯路
+                    </h2>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Main Content -->
+            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                
+                    <span class="meta d-inline-block">
+    
+        <i class="far fa-bookmark fa-fw"></i>
+        
+
+<a href="/categories/hexo/">hexo</a>
+
+    
+    
+        <span class="post-meta-split">&nbsp;|&nbsp;</span>
+        <i class="fas fa-user-edit"></i>
+        Leo
+    
+    <!-- Date -->
+    
+        <span class="post-meta-split">&nbsp;|&nbsp;</span>
+        <i class="far fa-calendar-check fa-fw"></i>
+        2021-10-04
+    
+    <!-- word count and read count -->
+    
+
+    
+
+    
+        <span class="post-meta-split">&nbsp;|&nbsp;</span>
+        <i class="far fa-eye fa-fw"></i>
+        <span id="busuanzi_value_page_pv"></span>
+    
+</span>  
+                
+                <p>[toc]</p>
+<h2 id="hexo搭建个人博客"><a href="#hexo搭建个人博客" class="headerlink" title="hexo搭建个人博客"></a>hexo搭建个人博客</h2><h3 id="1-安装及基础配置"><a href="#1-安装及基础配置" class="headerlink" title="1. 安装及基础配置"></a>1. 安装及基础配置</h3><ol>
+<li>安装nodejs（<a target="_blank" rel="noopener" href="https://nodejs.dev/download">下载地址</a>）</li>
+<li>安装Git （<a target="_blank" rel="noopener" href="https://git-scm.com/downloads">下载地址</a>）</li>
+<li>安装hexo并运行：在某个文件夹下打开cmd窗口执行以下命令<ul>
+<li>安装：     <code>npm install -g hexo-cli</code></li>
+<li>初始化： <code>hexo init [folder] </code>  在指定目录或当前工作目录下生成一些必要的文件</li>
+<li>生成：     <code>hexo g</code> ，如果上一步指定了folder先切换一下工作目录 <code>cd folder</code></li>
+<li>运行：     <code>hexo s</code> ，访问 <code>http://localhost:4000</code> 即可访问默认主题下的博客页面</li>
+</ul>
+</li>
+<li>利用Pages功能部署到GitHub上，以便能够让其他人访问你的博客</li>
+</ol>
+<hr>
+<h3 id="2-GitHub部署"><a href="#2-GitHub部署" class="headerlink" title="2. GitHub部署"></a>2. GitHub部署</h3><ol>
+<li><p>创建一个GitHub仓库，仓库名一定要是   <strong>账户名.github.io</strong></p>
+</li>
+<li><p>开通Pages服务，在仓库设置项中<div class="img-item" data-src="https://i.loli.net/2021/10/04/gfNldJY3suhOaj2.png" data-sub-html=".caption"><img src="https://i.loli.net/2021/10/04/gfNldJY3suhOaj2.png" alt="image-20211004175633253"><div class="img-caption d-block text-center"><span class="center-caption text-muted border-bottom">image-20211004175633253</span></div></div></p>
+</li>
+<li><p>安装git部署插件</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure></li>
+<li><p>填写站点**_config.yml** 配置文件中最后deploy属性部分如下：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">你的仓库访问地址</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master(可能是main,视具体情况而定)</span></span><br></pre></td></tr></table></figure></li>
+<li><p>运行命令</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g &amp; hexo d</span><br></pre></td></tr></table></figure>
+
+<p>上面命令就是先生成然后上传public文件夹内的文件到你的仓库</p>
+</li>
+<li><p>从page网址就可以进入你的博客了。</p>
+</li>
+</ol>
+<hr>
+<h3 id="3-基础配置文件说明"><a href="#3-基础配置文件说明" class="headerlink" title="3. 基础配置文件说明"></a>3. 基础配置文件说明</h3><ol>
+<li><strong>public</strong>文件夹，里面是博客网站所需要的所有静态文件，当每次用 <code>hexo g</code> 命令之后就会生成网站所需要的文件，其中的index.html就是网站入口（主页）；</li>
+<li><strong>scaffolds</strong>文件夹，里面是创建博客，标签，分类等文件夹所用到的模板<ul>
+<li><code>hexo new post blog1</code></li>
+<li><code>hexo new tags tags</code></li>
+<li><code>hexo new categories categories</code></li>
+</ul>
+</li>
+<li><strong>source</strong>文件夹，就是存放博客，标签，分类元数据等内容的</li>
+<li><strong>themes</strong>主题文件夹，将网上找的主题放里面，在_config.yml文件中修改主题为对应主题文件夹的名字即可应用该主题</li>
+<li><strong>_config.yml</strong>站点配置文件，在里面设置各种与网站相关的属性，具体见<a target="_blank" rel="noopener" href="https://hexo.io/docs/configuration">官网</a></li>
+<li><strong>packages.json</strong>安转的一些nodejs包，不用管。</li>
+</ol>
+<hr>
+<h3 id="4-运用主题"><a href="#4-运用主题" class="headerlink" title="4. 运用主题"></a>4. 运用主题</h3><p>这里值得说明的是，官方给出的主题库中很多主题其实是存在问题的，而自己可能在使用过程中出现问题又不知道怎么去修改，所以找一个比较火的主题其实是比较推荐的（比如<a target="_blank" rel="noopener" href="https://github.com/theme-next/hexo-theme-next">next</a>)。我自己选了个比较符合自己喜好的主题，但是应用的过程中踩了很多坑，这里记录一下，供大家参考借鉴，未必适用你的主题。</p>
+<p><strong>我选用的是<a target="_blank" rel="noopener" href="https://github.com/luswdev/hexo-theme-clean">clean</a>主题</strong>，比较简洁干净的一个主题，若需要使用请先阅读官方装上一些必备的包。</p>
+<h4 id="4-1-bugs-fix"><a href="#4-1-bugs-fix" class="headerlink" title="4.1 bugs fix"></a>4.1 bugs fix</h4><p>首先修复一下主题文件中几个bug，博客最下面<em>上一页</em>和<em>下一页</em>的位置反了，找到以下文件：</p>
+<ol>
+<li> <code>..\MyBlog\themes\clean\layout\_partial\pagination.ejs</code>，正确代码如下：</li>
+</ol>
+   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul class=&quot;pagination d-block text-center&quot;&gt;</span><br><span class="line">  &lt;% if (page.prev)&#123; %&gt;</span><br><span class="line">  &lt;li class=&quot;previous page-item d-inline&quot;&gt;</span><br><span class="line">    &lt;a</span><br><span class="line">      href=&quot;&lt;%- config.root %&gt;&lt;%- page.prev_link %&gt;&quot;</span><br><span class="line">      class=&quot;page-link float-left&quot;</span><br><span class="line">      &gt;&amp;larr; &lt;%- __(&#x27;prev&#x27;)%&gt;&lt;/a</span><br><span class="line">    &gt;</span><br><span class="line">  &lt;/li&gt;</span><br><span class="line">  &lt;% &#125; %&gt; &lt;% if (page.next)&#123; %&gt;</span><br><span class="line">  &lt;li class=&quot;next page-item d-inline&quot;&gt;</span><br><span class="line">    &lt;a</span><br><span class="line">      href=&quot;&lt;%- config.root %&gt;&lt;%- page.next_link %&gt;&quot;</span><br><span class="line">      class=&quot;page-link float-right&quot;</span><br><span class="line">      &gt;&lt;%- __(&#x27;next&#x27;)%&gt; &amp;rarr;&lt;/a</span><br><span class="line">    &gt;</span><br><span class="line">  &lt;/li&gt;</span><br><span class="line">  &lt;% &#125; %&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li> <code>..\MyBlog\themes\clean\layout\_partial\post\post-footer.ejs</code>, 正确代码如下：</li>
+</ol>
+   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;% if (page.prev || page.next) &#123; %&gt;</span><br><span class="line">&lt;div class=&quot;col-lg-8 offset-lg-2 col-md-10 offset-md-1&quot;&gt;</span><br><span class="line">  &lt;ul class=&quot;pagination d-block text-center&quot;&gt;</span><br><span class="line">    &lt;% if (page.prev)&#123; %&gt;</span><br><span class="line">    &lt;li class=&quot;previous page-item d-inline&quot;&gt;</span><br><span class="line">      &lt;a href=&quot;&lt;%- url_for(page.prev.path) %&gt;&quot; class=&quot;page-link float-left&quot;</span><br><span class="line">        &gt;&amp;larr; &lt;%- __(&#x27;prev&#x27;)%&gt;&lt;/a</span><br><span class="line">      &gt;</span><br><span class="line">    &lt;/li&gt;</span><br><span class="line">    &lt;% &#125; %&gt; &lt;% if (page.next)&#123; %&gt;</span><br><span class="line">    &lt;li class=&quot;next page-item d-inline&quot;&gt;</span><br><span class="line">      &lt;a href=&quot;&lt;%- url_for(page.next.path) %&gt;&quot; class=&quot;page-link float-right&quot;</span><br><span class="line">        &gt;&lt;%- __(&#x27;next&#x27;)%&gt; &amp;rarr;&lt;/a</span><br><span class="line">      &gt;</span><br><span class="line">    &lt;/li&gt;</span><br><span class="line">    &lt;% &#125; %&gt;</span><br><span class="line">  &lt;/ul&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-2-使用gitalk添加评论功能"><a href="#4-2-使用gitalk添加评论功能" class="headerlink" title="4.2 使用gitalk添加评论功能"></a>4.2 使用gitalk添加评论功能</h4><ol>
+<li><p>注册GitHub上的OAuth应用，<a target="_blank" rel="noopener" href="https://github.com/settings/applications/new">链接</a></p>
+<ul>
+<li>应用程序名随意填</li>
+<li>homepageURL是你的博客网页地址，也就是上面的GitHubPages得到的地址</li>
+<li>Authorization callback URL同上</li>
+</ul>
+</li>
+<li><p>在你的<strong>主题配置文件</strong>中找到配置gitalk相关的部分，一般需要填入以下内容，也就是上述步骤得到的一些参数，accessToken也是在OAuth下的一个tab中生成的(<a target="_blank" rel="noopener" href="https://github.com/settings/tokens">访问地址</a>)：</p>
+<p><div class="img-item" data-src="https://i.loli.net/2021/10/04/R8CiTwAPyJ2tGvI.png" data-sub-html=".caption"><img src="https://i.loli.net/2021/10/04/R8CiTwAPyJ2tGvI.png" alt="image-20211004180304395"><div class="img-caption d-block text-center"><span class="center-caption text-muted border-bottom">image-20211004180304395</span></div></div></p>
+</li>
+<li><p>注意上面的repo项填的只是你的<strong>仓库名</strong>，而不是仓库的整个访问地址，这个是用来放评论的仓库，可以直接用上面<a href="#GitHub%E9%83%A8%E7%BD%B2">步骤1</a>中创建的那个托管博客网页的仓库，也可以另外建个仓库，owner和admin就是你的<strong>用户名</strong>（一定不要填错，直接复制粘贴最保险，我就是admin漏了个字母找了超级久bug，填错在评论区会出现error not found 的错误）。</p>
+</li>
+</ol>
+<p>完成以上步骤后就可以重新生成然后部署到网站上了。</p>
+<p>以下几个是修改完一些内容后进行生成和部署的命令，比较常用：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean <span class="comment"># 删掉public文件夹，清理</span></span><br><span class="line">hexo g     <span class="comment"># 重新生成public内的文件</span></span><br><span class="line">hexo d     <span class="comment"># 部署到GitHub上</span></span><br></pre></td></tr></table></figure>
+
+<p>部署完就可以打开你的博客看看效果了，第一次应该是要先让你用GitHub登录一下，然后就能开启评论功能了，貌似每篇博客都得你自己先登一下，不过也就一键点击的事。<div class="img-item" data-src="https://i.loli.net/2021/10/04/fD1NBOjGzCuUr27.png" data-sub-html=".caption"><img src="https://i.loli.net/2021/10/04/fD1NBOjGzCuUr27.png" alt="image-20211004183241428"><div class="img-caption d-block text-center"><span class="center-caption text-muted border-bottom">image-20211004183241428</span></div></div></p>
+<hr>
+<h4 id="4-3-标签页-分类页-关于我等页面制作"><a href="#4-3-标签页-分类页-关于我等页面制作" class="headerlink" title="4.3 标签页 分类页 关于我等页面制作"></a>4.3 标签页 分类页 关于我等页面制作</h4><p>这里以tags页面创建为例，说明这一类页面怎么支座生成。</p>
+<p>输入以下命令：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page tags tags</span><br></pre></td></tr></table></figure>
+
+<p>会在source文件夹下生成一下tags文件夹，里面有一个index.md文件，类似：</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2021-10-04 14:10:47</span><br><span class="line">type: tags</span><br><span class="line"><span class="section">layout: tags</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
+
+<p>title可以自己改，type填tags，最后一项layout很重要，我这个主题没有这一项就无法显示标签页，也是网上找了很久的解决方案才知道的。可能有点主题不需要，如果有问题就加上试试。这一项的内容，根据你主题文件夹下用于控制便签页布局的文件名而定，比如我的主题中是这样的：</p>
+<p><div class="img-item" data-src="https://i.loli.net/2021/10/04/gb2mqoFsZ8O4TxW.png" data-sub-html=".caption"><img src="https://i.loli.net/2021/10/04/gb2mqoFsZ8O4TxW.png" alt="image-20211004195417858"><div class="img-caption d-block text-center"><span class="center-caption text-muted border-bottom">image-20211004195417858</span></div></div></p>
+<p>那就填上tags，配置完保存即可。</p>
+<p>然后在 source/_posts文件夹下，也就是存放博客内容的地方，对某一篇推文添加标签：</p>
+<p><div class="img-item" data-src="https://i.loli.net/2021/10/04/sHcFiajYoIkMmfZ.png" data-sub-html=".caption"><img src="https://i.loli.net/2021/10/04/sHcFiajYoIkMmfZ.png" alt="image-20211004195807995"><div class="img-caption d-block text-center"><span class="center-caption text-muted border-bottom">image-20211004195807995</span></div></div></p>
+<p>上面展示的是一篇博客(.md文档)的头部信息，以上下三根短线 — 为开头结尾，说明一些博客基本信息，最终不会渲染出来，就像HTML文档的head部分。添加上tags这个属性，每个标签以 <strong>- tag</strong> 的格式书写，注意中间有空格，不然不能正确识别。保存后，标签页就算完成了，重新生成部署一下hexo，打开网站就能见到如下的标签搜索页：</p>
+<p><div class="img-item" data-src="https://i.loli.net/2021/10/04/5zdAryegVpj1mhE.png" data-sub-html=".caption"><img src="https://i.loli.net/2021/10/04/5zdAryegVpj1mhE.png" alt="image-20211004200523205"><div class="img-caption d-block text-center"><span class="center-caption text-muted border-bottom">image-20211004200523205</span></div></div></p>
+<p>分类页同理制作。</p>
+
+            </div>
+
+            <!-- Post information -->
+            
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 post-tags">
+        
+            <i class="fas fa-tag" style="vertical-align: middle;font-size: .8rem;"></i>
+            tags:&nbsp;
+            
+            
+        
+            <a href="/tags/hexo/">#hexo</a> <a href="/tags/教程/">#教程</a>
+        
+    </div>
+
+            
+<div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+  <ul class="pagination d-block text-center">
+    
+    <li class="previous page-item d-inline">
+      <a href="/2021/10/04/About-Me/" class="page-link float-left"
+        >&larr; 上一篇</a
+      >
+    </li>
+     
+    <li class="next page-item d-inline">
+      <a href="/2021/10/04/%E7%AC%AC%E4%B8%80%E7%AB%A0/" class="page-link float-right"
+        >下一篇 &rarr;</a
+      >
+    </li>
+    
+  </ul>
+</div>
+
+
+
+            
+                <!-- Comments -->
+                
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+  <div id="gitalk-container"></div>
+</div>
+
+<script>
+  let gitalk = new Gitalk({
+      clientID: 'f65d006bf759b125e65e',
+      clientSecret: '97c5a7bc54ecd9501d19d7685380877c09370d13',
+      repo: 'BigDevil82.github.io',
+      owner: 'BigDevil82',
+      admin: "BigDevil82",
+      id: '2021-10-04 18:17:23',
+      title: 'hexo搭建博客详解',
+      distractionFreeMode: true  // Facebook-like distraction free mode
+  });
+  gitalk.render('gitalk-container');
+</script>
+
+
+                
+
+            
+
+        </div>
+    </div>
+</article> 
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+    <style>
+        #toc-content .toc-link::before {
+            background-color: transparent;
+            max-height: 25px;
+        }
+
+        #toc-content .toc-link.is-active-link::before {
+            background-color: #404040;
+        }
+    </style>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <div class="ui-toc dropup scrollspy-body pull-right" style="right: 3%;">
+        <button type="button" class="toc-btn btn btn-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+            <i class="fas fa-list"></i>
+        </button>
+        <div class="dropdown-menu dropdown-menu-right p-2"  aria-labelledby="tocLabel">
+            <div class="toc-widget">
+                <div id="toc-content" class="text-truncate">
+                </div>
+            </div>
+            <div class="toc-menu pt-3 pl-4">
+                <a class="expand-toggle d-block py-1" href="#"><span class="expand-text">全部展开</span><span class="close-text" style="display: none;">全部收起</span></a>
+                <a class="back-to-top d-block py-1" href="#">回到顶部</a>
+                <a class="go-to-bottom d-block py-1" href="#">移至底部</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        tocbot.init({
+            // Where to render the table of contents.
+            tocSelector: '#toc-content',
+            // Where to grab the headings to build the table of contents.
+            contentSelector: 'article',
+            // Which headings to grab inside of the contentSelector element.
+            headingSelector: 'h1, h2, h3',
+            // For headings inside relative or absolute positioned containers within content.
+            hasInnerContainers: true,
+        });
+    </script>
+
+
+    
+
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 text-center">
+                <ul class="list-inline">
+                    
+
+                    
+
+                    
+                        <li class="list-inline-item">
+                            <a rel="external" href="https://github.com/BigDevil82/BigDevil82.github.io.git" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <ul class="copyright footer-menu list-inline">
+                    
+                    
+                        <li class="list-inline-item">
+                            
+                            
+                            <a href="/">
+                                
+                                    Home
+                                
+                            </a>
+                        </li>
+                    
+                        <li class="list-inline-item">
+                            
+                                <span class="copyright-split">&nbsp;|&nbsp;</span>
+                            
+                            
+                            <a href="/archives">
+                                
+                                    Archives
+                                
+                            </a>
+                        </li>
+                    
+                        <li class="list-inline-item">
+                            
+                                <span class="copyright-split">&nbsp;|&nbsp;</span>
+                            
+                            
+                            <a href="/tags">
+                                
+                                    Tags
+                                
+                            </a>
+                        </li>
+                    
+                        <li class="list-inline-item">
+                            
+                                <span class="copyright-split">&nbsp;|&nbsp;</span>
+                            
+                            
+                            <a href="/categories">
+                                
+                                    Categories
+                                
+                            </a>
+                        </li>
+                    
+                        <li class="list-inline-item">
+                            
+                                <span class="copyright-split">&nbsp;|&nbsp;</span>
+                            
+                            
+                            <a href="/about">
+                                
+                                    About
+                                
+                            </a>
+                        </li>
+                    
+                </ul>
+                <p class="copyright footer-author">
+                    &copy; 2021-2021 
+                    <a rel="external" class="copyright-link" href="Leo" target="_blank">Leo</a><br/>
+                    Powered by <a rel="external" class="copyright-link" href="https://hexo.io/" target="_blank">Hexo</a>  
+                    <span class="copyright-split">&nbsp;|&nbsp;&nbsp;</span>
+                    Theme <a rel="external" class="copyright-link" href="https://github.com/luswdev/hexo-theme-clean.git" target="_blank">Clean</a>
+                    
+                        <br/>
+                        <span id="busuanzi_container_site_pv">
+                            <i class="fas fa-eye"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;
+                        </span>
+                    
+                    
+                        <span id="busuanzi_container_site_uv">
+                            <span class="copyright-split">&nbsp;|&nbsp;</span>
+                            <i class="fas fa-user-friends"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_uv"></span>&nbsp;
+                        </span>
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    <!-- jQuery -->
+<script src="//cdn.jsdelivr.net/npm/jquery@2.1.4/dist/jquery.min.js"></script>
+
+<!-- For drop down -->
+<script src="//cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"></script>
+<!-- Gallery -->
+<script src="//cdn.jsdelivr.net/npm/lightgallery@1.6.11/dist/js/lightgallery-all.min.js"></script>
+<!-- Busuanzi -->
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<!-- Search script -->
+
+<script src="/js/search.js"></script>
+
+<script type="text/javascript">
+    $(function () {
+        searchFunc( '/search.xml' , 'searchInput', 'searchResult');
+    });
+</script>
+
+
+
+<script src="/js/main.js"></script>
+
+
+
+    <!-- Search Modal -->
+    <!-- Modal -->
+<div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+        <div class="modal-content overflow-auto">
+            <div class="modal-header">
+                <input type="text" class="form-control" placeholder="搜索关键词..." id="searchInput">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div id="searchResult">
+                    <div class="search-empty text-center text-muted p-5">
+                        <i class="far fa-meh"></i>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
