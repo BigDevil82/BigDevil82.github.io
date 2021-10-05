@@ -186,7 +186,7 @@
 <h3 id="2-GitHub部署"><a href="#2-GitHub部署" class="headerlink" title="2. GitHub部署"></a>2. GitHub部署</h3><ol>
 <li><p>创建一个GitHub仓库，仓库名一定要是   <strong>账户名.github.io</strong></p>
 </li>
-<li><p>开通Pages服务，在仓库设置项中<div class="img-item" data-src="https://i.loli.net/2021/10/04/sHcFiajYoIkMmfZ.png" data-sub-html=".caption"><img src="https://i.loli.net/2021/10/04/sHcFiajYoIkMmfZ.png" alt="image-20211004183241428"><div class="img-caption d-block text-center"><span class="center-caption text-muted border-bottom">image-20211004183241428</span></div></div></p>
+<li><p>开通Pages服务，在仓库设置项中<div class="img-item" data-src="https://i.loli.net/2021/10/04/sHcFiajYoIkMmfZ.png" data-sub-html=".caption"><img src="https://i.loli.net/2021/10/04/sHcFiajYoIkMmfZ.png" alt="image-20211004183241428"></div></p>
 </li>
 <li><p>安装git部署插件</p>
 <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure></li>
@@ -237,7 +237,7 @@
 </ul>
 </li>
 <li><p>在你的<strong>主题配置文件</strong>中找到配置gitalk相关的部分，一般需要填入以下内容，也就是上述步骤得到的一些参数，accessToken也是在OAuth下的一个tab中生成的(<a target="_blank" rel="noopener" href="https://github.com/settings/tokens">访问地址</a>)：</p>
-<p><div class="img-item" data-src="https://i.loli.net/2021/10/04/R8CiTwAPyJ2tGvI.png" data-sub-html=".caption"><img src="https://i.loli.net/2021/10/04/R8CiTwAPyJ2tGvI.png" alt="image-20211004195417858"><div class="img-caption d-block text-center"><span class="center-caption text-muted border-bottom">image-20211004195417858</span></div></div></p>
+<p><div class="img-item" data-src="https://i.loli.net/2021/10/04/R8CiTwAPyJ2tGvI.png" data-sub-html=".caption"><img src="https://i.loli.net/2021/10/04/R8CiTwAPyJ2tGvI.png" alt="image-20211004195417858"></div></p>
 </li>
 <li><p>注意上面的repo项填的只是你的<strong>仓库名</strong>，而不是仓库的整个访问地址，这个是用来放评论的仓库，可以直接用上面<a href="#GitHub%E9%83%A8%E7%BD%B2">步骤1</a>中创建的那个托管博客网页的仓库，也可以另外建个仓库，owner和admin就是你的<strong>用户名</strong>（一定不要填错，直接复制粘贴最保险，我就是admin漏了个字母找了超级久bug，填错在评论区会出现error not found 的错误）。</p>
 </li>
@@ -247,7 +247,7 @@
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean <span class="comment"># 删掉public文件夹，清理</span></span><br><span class="line">hexo g     <span class="comment"># 重新生成public内的文件</span></span><br><span class="line">hexo d     <span class="comment"># 部署到GitHub上</span></span><br></pre></td></tr></table></figure>
 
 <p>部署完就可以打开你的博客看看效果了，第一次应该是要先让你用GitHub登录一下，然后就能开启评论功能了，貌似每篇博客都得你自己先登一下，不过也就一键点击的事。</p>
-<p><div class="img-item" data-src="https://i.loli.net/2021/10/04/gb2mqoFsZ8O4TxW.png" data-sub-html=".caption"><img src="https://i.loli.net/2021/10/04/gb2mqoFsZ8O4TxW.png" alt="image-20211004175633253"><div class="img-caption d-block text-center"><span class="center-caption text-muted border-bottom">image-20211004175633253</span></div></div></p>
+<p><div class="img-item" data-src="https://i.loli.net/2021/10/04/gb2mqoFsZ8O4TxW.png" data-sub-html=".caption"><img src="https://i.loli.net/2021/10/04/gb2mqoFsZ8O4TxW.png" alt="image-20211004175633253"></div></p>
 <hr>
 <h4 id="4-3-标签页-分类页-关于我等页面制作"><a href="#4-3-标签页-分类页-关于我等页面制作" class="headerlink" title="4.3 标签页 分类页 关于我等页面制作"></a>4.3 标签页 分类页 关于我等页面制作</h4><p>这里以tags页面创建为例，说明这一类页面怎么支座生成。</p>
 <p>输入以下命令：</p>
@@ -257,12 +257,12 @@
 <figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2021-10-04 14:10:47</span><br><span class="line">type: tags</span><br><span class="line"><span class="section">layout: tags</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
 
 <p>title可以自己改，type填tags，最后一项layout很重要，我这个主题没有这一项就无法显示标签页，也是网上找了很久的解决方案才知道的。可能有点主题不需要，如果有问题就加上试试。这一项的内容，根据你主题文件夹下用于控制便签页布局的文件名而定，比如我的主题中是这样的：</p>
-<p><div class="img-item" data-src="https://i.loli.net/2021/10/04/fD1NBOjGzCuUr27.png" data-sub-html=".caption"><img src="https://i.loli.net/2021/10/04/fD1NBOjGzCuUr27.png" alt="image-20211004180304395"><div class="img-caption d-block text-center"><span class="center-caption text-muted border-bottom">image-20211004180304395</span></div></div></p>
+<p><div class="img-item" data-src="https://i.loli.net/2021/10/04/fD1NBOjGzCuUr27.png" data-sub-html=".caption"><img src="https://i.loli.net/2021/10/04/fD1NBOjGzCuUr27.png" alt="image-20211004180304395"></div></p>
 <p>那就填上tags，配置完保存即可。</p>
 <p>然后在 source/_posts文件夹下，也就是存放博客内容的地方，对某一篇推文添加标签：</p>
-<p><div class="img-item" data-src="https://i.loli.net/2021/10/04/gfNldJY3suhOaj2.png" data-sub-html=".caption"><img src="https://i.loli.net/2021/10/04/gfNldJY3suhOaj2.png" alt="image-20211004195807995"><div class="img-caption d-block text-center"><span class="center-caption text-muted border-bottom">image-20211004195807995</span></div></div></p>
+<p><div class="img-item" data-src="https://i.loli.net/2021/10/04/gfNldJY3suhOaj2.png" data-sub-html=".caption"><img src="https://i.loli.net/2021/10/04/gfNldJY3suhOaj2.png" alt="image-20211004195807995"></div></p>
 <p>上面展示的是一篇博客(.md文档)的头部信息，以上下三根短线 — 为开头结尾，说明一些博客基本信息，最终不会渲染出来，就像HTML文档的head部分。添加上tags这个属性，每个标签以 <strong>- tag</strong> 的格式书写，注意中间有空格，不然不能正确识别。保存后，标签页就算完成了，重新生成部署一下hexo，打开网站就能见到如下的标签搜索页：</p>
-<p><div class="img-item" data-src="https://i.loli.net/2021/10/04/5zdAryegVpj1mhE.png" data-sub-html=".caption"><img src="https://i.loli.net/2021/10/04/5zdAryegVpj1mhE.png" alt="image-20211004200523205"><div class="img-caption d-block text-center"><span class="center-caption text-muted border-bottom">image-20211004200523205</span></div></div></p>
+<p><div class="img-item" data-src="https://i.loli.net/2021/10/04/5zdAryegVpj1mhE.png" data-sub-html=".caption"><img src="https://i.loli.net/2021/10/04/5zdAryegVpj1mhE.png" alt="image-20211004200523205"></div></p>
 <p>分类页同理制作。</p>
 
             </div>
